@@ -1,0 +1,60 @@
+{
+  "_ayuda": "Contenido de la página Lamouselinne. Edita solo el texto entre comillas a la derecha de los dos puntos. Si un texto queda vacío (\"\"), el sitio muestra [PENDIENTE]. Las fotos van en la carpeta src/img/lamouselinne/ con el nombre exacto que aparece en cada producto. En \"precio\" puedes escribir, por ejemplo, \"Desde $10.000\" o \"A cotizar\".",
+
+  "nombre": "Lamouselinne",
+  "logo": "logos/lamouselinne.png",
+
+  "seo": {
+    "titulo": "Lamouselinne | Calugas, chocolates y tortas",
+    "descripcion": "",
+    "imagenCompartir": "compartir/lamouselinne.jpg"
+  },
+
+  "accesoPortada": {
+    "foto": "portada/lamouselinne.jpg",
+    "textoFoto": "Productos de Lamouselinne",
+    "bajada": ""
+  },
+
+  "intro": "",
+
+  "categorias": [
+    {
+      "id": "calugas",
+      "nombre": "Calugas",
+      "descripcion": "",
+      "productos": [
+        { "nombre": "", "descripcion": "", "precio": "", "foto": "lamouselinne/calugas-1.jpg" }
+      ]
+    },
+    {
+      "id": "chocolates",
+      "nombre": "Chocolates",
+      "descripcion": "",
+      "productos": [
+        { "nombre": "", "descripcion": "", "precio": "", "foto": "lamouselinne/chocolates-1.jpg" }
+      ]
+    },
+    {
+      "id": "tortas",
+      "nombre": "Tortas",
+      "descripcion": "",
+      "productos": [
+        { "nombre": "", "descripcion": "", "precio": "", "foto": "lamouselinne/tortas-1.jpg" }
+      ]
+    }
+  ],
+
+  "comoPedir": {
+    "titulo": "Cómo pedir",
+    "pasos": [],
+    "anticipacion": "",
+    "entrega": ""
+  },
+
+  "contacto": {
+    "whatsapp": "",
+    "instagram": "",
+    "correo": ""
+  }
+}

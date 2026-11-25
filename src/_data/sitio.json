@@ -1,0 +1,13 @@
+{
+  "_ayuda": "Datos generales y de la PORTADA. Edita solo el texto entre comillas a la derecha de los dos puntos. Si un texto queda vacío (\"\"), el sitio muestra [PENDIENTE].",
+
+  "nombre": "Pauli Schmidt Kaufman",
+  "frase": "",
+  "url": "https://paulischmidt.cl",
+
+  "seo": {
+    "titulo": "Pauli Schmidt Kaufman | La.kaffe y Lamouselinne",
+    "descripcion": "",
+    "imagenCompartir": "compartir/portada.jpg"
+  }
+}

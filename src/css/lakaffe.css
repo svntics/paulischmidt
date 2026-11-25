@@ -1,0 +1,13 @@
+/* LA.KAFFE — colores y tipografías de la marca.
+   PROVISORIO: valores neutros hasta recibir el logo y los colores reales de La.kaffe.
+   Cambiar SOLO aquí; no copiar estos valores a lamouselinne.css. */
+:root {
+  --fondo: #FBFAF8;
+  --fondo-alterno: #F2F0EC;
+  --superficie: #FFFFFF;
+  --texto: #262626;
+  --texto-suave: #5E5E5E;
+  --enlace: #262626;
+  --linea: #E3E0DA;
+  --letra-titulo: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

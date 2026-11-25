@@ -1,0 +1,41 @@
+/* PORTADA: estilo neutro que une ambas marcas sin usar sus colores */
+:root {
+  --fondo: #FAF8F5;
+  --texto: #2B2B2B;
+  --texto-suave: #6B6560;
+  --enlace: #2B2B2B;
+  --linea: #E4DFD8;
+  --letra-titulo: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+.portada__main { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1rem 2rem; }
+.portada__cabecera { text-align: center; margin-bottom: 2rem; }
+.portada__nombre { font-size: clamp(2.25rem, 9vw, 4rem); font-weight: 500; letter-spacing: -.01em; margin-bottom: .35em; }
+.portada__frase { color: var(--texto-suave); font-size: 1.1rem; max-width: 34rem; margin: 0 auto; }
+
+.accesos { display: grid; gap: 1rem; }
+.acceso {
+  display: grid; text-decoration: none; color: var(--texto);
+  background: #fff; border: 1px solid var(--linea); border-radius: 14px; overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.acceso:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(43,43,43,.08); }
+@media (prefers-reduced-motion: reduce) { .acceso, .acceso:hover { transition: none; transform: none; } }
+.acceso__foto { display: block; }
+.acceso__img, .acceso__foto .foto-pendiente { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.acceso__texto { display: grid; gap: .5rem; padding: 1.1rem 1.25rem 1.3rem; justify-items: start; }
+.acceso__logo-img { max-height: 56px; width: auto; }
+.acceso__bajada { color: var(--texto-suave); }
+.acceso__ir { font-weight: 600; text-decoration: underline; text-underline-offset: .25em; }
+
+.pie--portada { border-top: 1px solid var(--linea); max-width: 72rem; margin: 1rem auto 0; padding: 2rem 1rem 2.5rem; }
+.pie__columnas { display: grid; gap: 2rem; }
+.pie__titulo { font-size: 1.2rem; }
+.portada__main--404 { text-align: center; padding-top: 5rem; }
+.boton-simple { display: inline-block; margin-top: 1rem; padding: .75rem 1.25rem; border: 1px solid var(--texto); border-radius: 999px; text-decoration: none; }
+
+@media (min-width: 48rem) {
+  .portada__main { padding-top: 4.5rem; }
+  .portada__cabecera { margin-bottom: 3rem; }
+  .accesos { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .pie__columnas { grid-template-columns: 1fr 1fr; }
+}

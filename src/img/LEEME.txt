@@ -1,0 +1,4 @@
+Aquí van las fotos y logos del sitio.
+Cada foto debe tener EXACTAMENTE el nombre que aparece en el recuadro "FOTO PENDIENTE" del sitio
+(y en los archivos de src/_data/). Al agregarla, el recuadro se reemplaza solo por la foto.
+Carpetas: portada/  lakaffe/  lamouselinne/  logos/  compartir/

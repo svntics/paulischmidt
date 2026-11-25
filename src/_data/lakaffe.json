@@ -1,0 +1,53 @@
+{
+  "_ayuda": "Contenido de la página La.kaffe. Edita solo el texto entre comillas a la derecha de los dos puntos. Si un texto queda vacío (\"\"), el sitio muestra [PENDIENTE]. Las fotos van en la carpeta src/img/ con el nombre exacto que aparece aquí.",
+
+  "nombre": "La.kaffe",
+  "logo": "logos/lakaffe.png",
+
+  "seo": {
+    "titulo": "La.kaffe | Pauli Schmidt Kaufman",
+    "descripcion": "",
+    "imagenCompartir": "compartir/lakaffe.jpg"
+  },
+
+  "accesoPortada": {
+    "foto": "portada/lakaffe.jpg",
+    "textoFoto": "Foto del local La.kaffe",
+    "bajada": ""
+  },
+
+  "trayectoria": {
+    "titulo": "Trayectoria",
+    "foto": "lakaffe/pauli.jpg",
+    "textoFoto": "Pauli Schmidt Kaufman",
+    "parrafos": []
+  },
+
+  "local": {
+    "titulo": "Qué ofrece el local",
+    "intro": "",
+    "foto": "lakaffe/local.jpg",
+    "textoFoto": "Interior del local La.kaffe",
+    "items": []
+  },
+
+  "apoderados": {
+    "titulo": "Espacio para apoderados",
+    "texto": "",
+    "foto": "lakaffe/espacio-apoderados.jpg",
+    "textoFoto": "Espacio para apoderados de La.kaffe",
+    "condiciones": ""
+  },
+
+  "horarios": {
+    "titulo": "Horarios",
+    "lista": [],
+    "nota": ""
+  },
+
+  "contacto": {
+    "whatsapp": "",
+    "instagram": "",
+    "correo": ""
+  }
+}

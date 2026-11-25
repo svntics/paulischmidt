@@ -1,0 +1,38 @@
+---
+layout: base.njk
+estilo: portada
+eleventyComputed:
+  titulo: "{{ sitio.seo.titulo }}"
+  descripcion: "{{ sitio.seo.descripcion }}"
+---
+<main id="contenido" class="portada__main">
+  <header class="portada__cabecera">
+    <h1 class="portada__nombre">{{ sitio.nombre }}</h1>
+    <p class="portada__frase">{% pend sitio.frase, "frase breve de la portada" %}</p>
+  </header>
+
+  <nav class="accesos" aria-label="Elige una marca">
+    {% for m in [lakaffe, lamouselinne] %}
+    <a class="acceso acceso--{{ m.nombre | lower | replace('.', '') }}" href="/{{ m.nombre | lower | replace('.', '') }}/">
+      <span class="acceso__foto">{% foto m.accesoPortada.foto, m.accesoPortada.textoFoto, "acceso__img", "eager" %}</span>
+      <span class="acceso__texto">
+        <span class="acceso__logo">{% logo m.logo, m.nombre, "acceso__logo-img" %}</span>
+        <span class="acceso__bajada">{% pend m.accesoPortada.bajada, "frase corta de " + m.nombre %}</span>
+        <span class="acceso__ir">Visitar {{ m.nombre }} <span aria-hidden="true">→</span></span>
+      </span>
+    </a>
+    {% endfor %}
+  </nav>
+</main>
+
+<footer class="pie pie--portada">
+  <div class="pie__columnas">
+    {% for m in [lakaffe, lamouselinne] %}
+    <section class="pie__marca" aria-labelledby="pie-{{ loop.index }}">
+      <h2 id="pie-{{ loop.index }}" class="pie__titulo">{{ m.nombre }}</h2>
+      {% include "partes/contacto.njk" %}
+    </section>
+    {% endfor %}
+  </div>
+  <p class="pie__legal">© {{ "" | anio }} {{ sitio.nombre }}</p>
+</footer>

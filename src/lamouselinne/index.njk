@@ -1,0 +1,68 @@
+---
+layout: base.njk
+estilo: lamouselinne
+eleventyComputed:
+  titulo: "{{ lamouselinne.seo.titulo }}"
+  descripcion: "{{ lamouselinne.seo.descripcion }}"
+  imagenCompartir: "{{ lamouselinne.seo.imagenCompartir }}"
+---
+{%- set m = lamouselinne -%}
+{% include "partes/encabezado-marca.njk" %}
+
+<main id="contenido">
+  <section class="intro" aria-labelledby="t-intro">
+    <h1 id="t-intro">Calugas, chocolates y tortas</h1>
+    <p>{% pend m.intro, "presentación breve de Lamouselinne" %}</p>
+  </section>
+
+  <nav class="categorias" aria-label="Categorías del catálogo">
+    <ul>
+      {% for c in m.categorias %}<li><a href="#{{ c.id }}">{{ c.nombre }}</a></li>{% endfor %}
+      <li><a href="#cotizar">Cotizar</a></li>
+    </ul>
+  </nav>
+
+  {% for c in m.categorias %}
+  <section class="categoria" id="{{ c.id }}" aria-labelledby="t-{{ c.id }}">
+    <h2 id="t-{{ c.id }}">{{ c.nombre }}</h2>
+    {% if not (c.descripcion | vacio) %}<p class="categoria__desc">{{ c.descripcion }}</p>{% endif %}
+    <ul class="productos">
+      {% for p in c.productos %}
+      <li class="producto">
+        {% foto p.foto, p.nombre or ("Producto de " + c.nombre), "producto__img" %}
+        <div class="producto__cuerpo">
+          <h3 class="producto__nombre">{% pend p.nombre, "nombre del producto" %}</h3>
+          <p class="producto__desc">{% pend p.descripcion, "descripción" %}</p>
+          <p class="producto__precio">{% pend p.precio, "precio de referencia o 'A cotizar'" %}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+
+  <section class="bloque-pedir" aria-labelledby="t-pedir">
+    <h2 id="t-pedir">{{ m.comoPedir.titulo }}</h2>
+    {% if m.comoPedir.pasos | vacio %}
+      <p>{% pend "", "pasos para hacer un pedido" %}</p>
+    {% else %}
+      <ol class="pasos">{% for p in m.comoPedir.pasos %}<li>{{ p }}</li>{% endfor %}</ol>
+    {% endif %}
+    <dl class="datos-pedido">
+      <div><dt>Anticipación</dt><dd>{% pend m.comoPedir.anticipacion, "anticipación mínima para pedir" %}</dd></div>
+      <div><dt>Entrega</dt><dd>{% pend m.comoPedir.entrega, "retiro y/o despacho, comunas" %}</dd></div>
+    </dl>
+  </section>
+
+  <section class="cotizar" id="cotizar" aria-labelledby="t-cotizar">
+    <h2 id="t-cotizar">Pide tu cotización</h2>
+    <p>{% pend "", "forma de cotizar: falta elegir la alternativa (WhatsApp o formulario)" %}</p>
+  </section>
+</main>
+
+<footer class="pie">
+  <h2 class="pie__titulo">{{ m.nombre }}</h2>
+  {% include "partes/contacto.njk" %}
+  <p><a href="/lakaffe/">Conoce también La.kaffe →</a></p>
+  <p class="pie__legal">© {{ "" | anio }} {{ sitio.nombre }} · <a href="/">Inicio</a></p>
+</footer>

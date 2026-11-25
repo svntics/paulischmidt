@@ -1,0 +1,70 @@
+---
+layout: base.njk
+estilo: lakaffe
+eleventyComputed:
+  titulo: "{{ lakaffe.seo.titulo }}"
+  descripcion: "{{ lakaffe.seo.descripcion }}"
+  imagenCompartir: "{{ lakaffe.seo.imagenCompartir }}"
+---
+{%- set m = lakaffe -%}
+{% include "partes/encabezado-marca.njk" %}
+
+<main id="contenido">
+  <section class="bloque trayectoria" aria-labelledby="t-trayectoria">
+    <div class="bloque__foto">{% foto m.trayectoria.foto, m.trayectoria.textoFoto, "foto-retrato", "eager" %}</div>
+    <div class="bloque__texto">
+      <p class="antetitulo">{{ sitio.nombre }}</p>
+      <h1 id="t-trayectoria">{{ m.trayectoria.titulo }}</h1>
+      {% if m.trayectoria.parrafos | vacio %}
+        <p>{% pend "", "historia y trayectoria de Pauli (desde cuándo, formación, hitos)" %}</p>
+      {% else %}
+        {% for p in m.trayectoria.parrafos %}<p>{{ p }}</p>{% endfor %}
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="bloque" aria-labelledby="t-local">
+    <div class="bloque__texto">
+      <h2 id="t-local">{{ m.local.titulo }}</h2>
+      <p>{% pend m.local.intro, "descripción del local" %}</p>
+      {% if m.local.items | vacio %}
+        <p>{% pend "", "lista de lo que ofrece el local (desayunos, café, etc.)" %}</p>
+      {% else %}
+        <ul class="lista">{% for i in m.local.items %}<li>{{ i }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+    <div class="bloque__foto">{% foto m.local.foto, m.local.textoFoto, "foto-ancha" %}</div>
+  </section>
+
+  <section class="bloque bloque--destacado" aria-labelledby="t-apoderados">
+    <div class="bloque__foto">{% foto m.apoderados.foto, m.apoderados.textoFoto, "foto-ancha" %}</div>
+    <div class="bloque__texto">
+      <h2 id="t-apoderados">{{ m.apoderados.titulo }}</h2>
+      <p>{% pend m.apoderados.texto, "descripción del espacio: desayuno y trabajo online" %}</p>
+      <p class="nota">{% pend m.apoderados.condiciones, "condiciones de uso (¿reserva?, ¿solo apoderados?)" %}</p>
+    </div>
+  </section>
+
+  <section class="bloque bloque--doble" aria-label="Horarios y contacto">
+    <div>
+      <h2>{{ m.horarios.titulo }}</h2>
+      {% if m.horarios.lista | vacio %}
+        <p>{% pend "", "días y horarios de atención" %}</p>
+      {% else %}
+        <dl class="horarios">
+          {% for h in m.horarios.lista %}<div><dt>{{ h.dias }}</dt><dd>{{ h.horas }}</dd></div>{% endfor %}
+        </dl>
+      {% endif %}
+      {% if not (m.horarios.nota | vacio) %}<p class="nota">{{ m.horarios.nota }}</p>{% endif %}
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      {% include "partes/contacto.njk" %}
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p><a href="/lamouselinne/">Conoce también Lamouselinne →</a></p>
+  <p class="pie__legal">© {{ "" | anio }} {{ sitio.nombre }} · <a href="/">Inicio</a></p>
+</footer>

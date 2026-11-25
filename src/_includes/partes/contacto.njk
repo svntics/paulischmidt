@@ -1,0 +1,15 @@
+{#- Lista de contacto de una marca. Uso: {% set m = lakaffe %}{% include "partes/contacto.njk" %} -#}
+<ul class="contacto">
+  <li>
+    <span class="contacto__etiqueta">WhatsApp</span>
+    {% if m.contacto.whatsapp | vacio %}{% pend "", "WhatsApp de " + m.nombre %}{% else %}<a href="{{ m.contacto.whatsapp | whatsapp }}" target="_blank" rel="noopener">{{ m.contacto.whatsapp }}</a>{% endif %}
+  </li>
+  <li>
+    <span class="contacto__etiqueta">Instagram</span>
+    {% if m.contacto.instagram | vacio %}{% pend "", "Instagram de " + m.nombre %}{% else %}<a href="{{ m.contacto.instagram | instagram }}" target="_blank" rel="noopener">{{ m.contacto.instagram }}</a>{% endif %}
+  </li>
+  <li>
+    <span class="contacto__etiqueta">Correo</span>
+    {% if m.contacto.correo | vacio %}{% pend "", "correo de " + m.nombre %}{% else %}<a href="mailto:{{ m.contacto.correo }}">{{ m.contacto.correo }}</a>{% endif %}
+  </li>
+</ul>

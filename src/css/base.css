@@ -1,0 +1,126 @@
+/* Estilos comunes. Los colores de cada marca están en lakaffe.css y lamouselinne.css */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: var(--letra-texto, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+}
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--letra-titulo, Georgia, serif); line-height: 1.2; font-weight: 600; margin: 0 0 .5em; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 7vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1em; }
+a { color: var(--enlace); text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid var(--foco, #1A5FB4); outline-offset: 3px; border-radius: 4px; }
+
+.saltar { position: absolute; left: -9999px; top: 0; }
+.saltar:focus { left: 1rem; top: 1rem; background: #fff; color: #000; padding: .5rem 1rem; z-index: 10; }
+
+/* Avisos de contenido pendiente: bien visibles para no olvidarlos */
+.pendiente {
+  display: inline;
+  background: #FFF1C9;
+  color: #5C3D00;
+  border: 1px dashed #9A6700;
+  border-radius: 4px;
+  padding: .05em .35em;
+  font-family: system-ui, sans-serif;
+  font-size: .9em;
+  font-weight: 500;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Recuadros de foto/logo pendiente */
+.foto-pendiente {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem;
+  width: 100%; aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(135deg, #ECEAE6 0 12px, #E2DFDA 12px 24px);
+  color: #3D3A36; text-align: center; padding: 1rem;
+  font-family: system-ui, sans-serif;
+}
+.foto-pendiente span { font-weight: 700; letter-spacing: .08em; font-size: .85rem; }
+.foto-pendiente code { font-size: .8rem; background: rgba(255,255,255,.75); padding: .15em .4em; border-radius: 4px; word-break: break-all; }
+.logo-pendiente {
+  display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1;
+  border: 1.5px dashed currentColor; border-radius: 6px; padding: .4em .8em;
+}
+.logo-pendiente__nombre { font-weight: 700; font-size: 1.25em; }
+.logo-pendiente small { font-family: system-ui, sans-serif; font-size: .65rem; letter-spacing: .1em; }
+
+/* Contacto */
+.contacto { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.contacto li { display: grid; gap: .1rem; }
+.contacto__etiqueta { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--texto-suave); }
+.contacto a { display: inline-block; padding: .35rem 0; font-weight: 500; }
+
+.pie__legal { font-size: .9rem; color: var(--texto-suave); margin-top: 1.5rem; }
+
+/* ---------- Estructura de las páginas de marca (sin colores) ---------- */
+.encabezado {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .75rem 1rem; border-bottom: 1px solid var(--linea);
+  background: var(--fondo);
+}
+.encabezado__volver { font-size: .9rem; text-decoration: none; color: var(--texto-suave); padding: .5rem 0; }
+.encabezado__logo { text-decoration: none; color: var(--texto); }
+.encabezado__img { max-height: 44px; width: auto; }
+
+main { display: block; }
+.bloque { display: grid; gap: 1.25rem; max-width: 68rem; margin: 0 auto; padding: 2.5rem 1rem; }
+.bloque + .bloque { border-top: 1px solid var(--linea); }
+.bloque--destacado { background: var(--fondo-alterno); max-width: none; border-top: 0 !important; }
+.bloque--destacado > * { max-width: 68rem; }
+.foto-retrato, .bloque .foto-pendiente.foto-retrato { aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; }
+.foto-ancha, .bloque .foto-pendiente.foto-ancha { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+.antetitulo { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: var(--texto-suave); margin-bottom: .5rem; }
+.lista { padding-left: 1.2rem; }
+.lista li { margin-bottom: .35rem; }
+.nota { color: var(--texto-suave); font-size: .95rem; }
+.horarios { margin: 0; display: grid; gap: .5rem; }
+.horarios div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dotted var(--linea); padding-bottom: .4rem; }
+.horarios dt { font-weight: 600; }
+.horarios dd { margin: 0; }
+
+.pie { border-top: 1px solid var(--linea); padding: 2rem 1rem 2.5rem; max-width: 68rem; margin: 0 auto; }
+
+/* Catálogo */
+.intro { max-width: 68rem; margin: 0 auto; padding: 2.5rem 1rem 1rem; }
+.categorias { position: sticky; top: 0; z-index: 5; background: var(--fondo); border-bottom: 1px solid var(--linea); }
+.categorias ul { list-style: none; margin: 0 auto; padding: .6rem 1rem; display: flex; gap: .5rem; overflow-x: auto; max-width: 68rem; }
+.categorias a {
+  display: inline-block; white-space: nowrap; padding: .5rem 1rem; border-radius: 999px;
+  border: 1px solid var(--linea); text-decoration: none; color: var(--texto); font-weight: 500;
+}
+.categoria { max-width: 68rem; margin: 0 auto; padding: 2.5rem 1rem 1rem; scroll-margin-top: 4rem; }
+.categoria__desc { color: var(--texto-suave); }
+.productos { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.producto { background: var(--superficie); border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; display: grid; }
+.producto__img, .producto .foto-pendiente { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.producto__cuerpo { padding: 1rem 1.1rem 1.2rem; }
+.producto__nombre { margin-bottom: .3rem; }
+.producto__desc { color: var(--texto-suave); font-size: .95rem; }
+.producto__precio { font-weight: 600; margin: 0; }
+.bloque-pedir, .cotizar { max-width: 68rem; margin: 0 auto; padding: 2.5rem 1rem; scroll-margin-top: 4rem; }
+.pasos { padding-left: 1.3rem; }
+.datos-pedido { display: grid; gap: .75rem; margin: 1rem 0 0; }
+.datos-pedido dt { font-weight: 600; }
+.datos-pedido dd { margin: 0; }
+.cotizar { background: var(--fondo-alterno); max-width: none; }
+.cotizar > * { max-width: 68rem; margin-left: auto; margin-right: auto; }
+
+@media (min-width: 40rem) {
+  .productos { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 56rem) {
+  .bloque { grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; padding: 4rem 1.5rem; }
+  .bloque--destacado { padding-left: max(1.5rem, calc((100% - 68rem) / 2)); padding-right: max(1.5rem, calc((100% - 68rem) / 2)); }
+  .productos { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .encabezado { padding: 1rem 1.5rem; }
+}

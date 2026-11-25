@@ -1,0 +1,13 @@
+/* LAMOUSELINNE — colores y tipografías de la marca.
+   PROVISORIO: valores neutros hasta recibir el logo y los colores reales de Lamouselinne.
+   Cambiar SOLO aquí; no copiar estos valores a lakaffe.css. */
+:root {
+  --fondo: #FCFBFA;
+  --fondo-alterno: #F4F1EF;
+  --superficie: #FFFFFF;
+  --texto: #2A2626;
+  --texto-suave: #625B5B;
+  --enlace: #2A2626;
+  --linea: #E6E1DE;
+  --letra-titulo: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
